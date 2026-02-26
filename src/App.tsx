@@ -48,7 +48,7 @@ export default function App() {
     { 
       title: "Automated Attendance System", 
       category: "Computer Vision", 
-      img: "ChatGPT Image Feb 25, 2026, 07_22_48 PM.png",
+      img: "https://res.cloudinary.com/dlzgede1z/image/upload/v1772039599/ChatGPT_Image_Feb_25_2026_07_22_48_PM_yjwzag.png",
       videoUrl: "https://www.youtube.com/embed/prlrCNAzSeQ",
       tags: ["CNN", "OpenCV", "Python"],
       description: "A contactless, automated attendance management system designed to streamline institutional processes. It utilizes advanced facial recognition algorithms to identify individuals and log their presence in real-time.",
@@ -58,7 +58,7 @@ export default function App() {
     { 
       title: "Energy Forecasting System", 
       category: "Deep Learning", 
-      img: "ChatGPT Image Feb 25, 2026, 09_39_03 PM.png",
+      img: "https://res.cloudinary.com/dlzgede1z/image/upload/v1772039541/ChatGPT_Image_Feb_25_2026_09_39_03_PM_gpjjyh.png",
       tags: ["LSTM", "Flask", "Pandas"],
       description: "A real-time energy demand forecasting system that predicts power requirements based on historical load data and weather parameters. This helps in efficient energy distribution and management.",
       objective: "To build a real-time energy demand forecasting system using historical load data and weather parameters.",
@@ -67,7 +67,7 @@ export default function App() {
     { 
       title: "Enhanced Human Behavior Recognition in Smart Environments using Deep Artificial Neural Networks", 
       category: "Deep Learning", 
-      img: "ChatGPT Image Feb 25, 2026, 09_43_36 PM.png",
+      img: "https://res.cloudinary.com/dlzgede1z/image/upload/v1772039613/ChatGPT_Image_Feb_25_2026_09_43_36_PM_mvqvxj.png",
       tags: ["ANN", "Deep Learning", "Smart Environments", "Python"],
       description: "A sophisticated human behavior recognition system designed for smart environments. It leverages deep artificial neural networks to analyze and categorize complex human activities with high precision, enabling intelligent responses in automated spaces.",
       objective: "To enhance human behavior recognition accuracy in smart environments using advanced deep learning architectures.",
@@ -177,7 +177,7 @@ export default function App() {
                 <div className="absolute inset-0 rounded-full bg-accent/10 animate-pulse" />
                 <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-accent/20">
                   <img 
-                    src="IMG1.jpeg" 
+                    src="https://res.cloudinary.com/dlzgede1z/image/upload/v1772039526/IMG1_nkhrno.jpg" 
                     alt="Profile" 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -253,7 +253,7 @@ export default function App() {
             >
               <div className="aspect-square rounded-[3rem] overflow-hidden border-2 border-accent/20">
                 <img 
-                  src="vecteezy_myself-vector-icon-design_21098416.jpg" 
+                  src="https://res.cloudinary.com/dlzgede1z/image/upload/v1772039582/vecteezy_myself-vector-icon-design_21098416_hbzhfd.jpg" 
                   alt="Research" 
                   className="w-full h-full object-cover opacity-80"
                   referrerPolicy="no-referrer"
