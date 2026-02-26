@@ -22,7 +22,8 @@ import {
   X,
   Code2,
   Wrench,
-  Briefcase
+  Briefcase,
+  Play
 } from "lucide-react";
 
 const SectionHeader = ({ title, subtitle }: { title: string; subtitle?: string }) => (
@@ -47,7 +48,8 @@ export default function App() {
     { 
       title: "Automated Attendance System", 
       category: "Computer Vision", 
-      img: "https://res.cloudinary.com/dlzgede1z/image/upload/v1772039599/ChatGPT_Image_Feb_25_2026_07_22_48_PM_yjwzag.png",
+      img: "ChatGPT Image Feb 25, 2026, 07_22_48 PM.png",
+      videoUrl: "https://www.youtube.com/embed/prlrCNAzSeQ",
       tags: ["CNN", "OpenCV", "Python"],
       description: "A contactless, automated attendance management system designed to streamline institutional processes. It utilizes advanced facial recognition algorithms to identify individuals and log their presence in real-time.",
       objective: "To develop a contactless, automated Attendance management system.",
@@ -56,7 +58,7 @@ export default function App() {
     { 
       title: "Energy Forecasting System", 
       category: "Deep Learning", 
-      img: "https://res.cloudinary.com/dlzgede1z/image/upload/v1772039541/ChatGPT_Image_Feb_25_2026_09_39_03_PM_gpjjyh.png",
+      img: "ChatGPT Image Feb 25, 2026, 09_39_03 PM.png",
       tags: ["LSTM", "Flask", "Pandas"],
       description: "A real-time energy demand forecasting system that predicts power requirements based on historical load data and weather parameters. This helps in efficient energy distribution and management.",
       objective: "To build a real-time energy demand forecasting system using historical load data and weather parameters.",
@@ -65,7 +67,7 @@ export default function App() {
     { 
       title: "Enhanced Human Behavior Recognition in Smart Environments using Deep Artificial Neural Networks", 
       category: "Deep Learning", 
-      img: "https://res.cloudinary.com/dlzgede1z/image/upload/v1772039613/ChatGPT_Image_Feb_25_2026_09_43_36_PM_mvqvxj.png",
+      img: "ChatGPT Image Feb 25, 2026, 09_43_36 PM.png",
       tags: ["ANN", "Deep Learning", "Smart Environments", "Python"],
       description: "A sophisticated human behavior recognition system designed for smart environments. It leverages deep artificial neural networks to analyze and categorize complex human activities with high precision, enabling intelligent responses in automated spaces.",
       objective: "To enhance human behavior recognition accuracy in smart environments using advanced deep learning architectures.",
@@ -175,7 +177,7 @@ export default function App() {
                 <div className="absolute inset-0 rounded-full bg-accent/10 animate-pulse" />
                 <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-accent/20">
                   <img 
-                    src="https://res.cloudinary.com/dlzgede1z/image/upload/v1772039526/IMG1_nkhrno.jpg" 
+                    src="IMG1.jpeg" 
                     alt="Profile" 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -200,11 +202,11 @@ export default function App() {
               {[
                 "Python", "TensorFlow", "PyTorch", "OpenCV", "Scikit-Learn", 
                 "Pandas", "NumPy", "Flask", "Docker", "Git", "MATLAB", "Java",
-                "CNN", "LSTM", "Computer Vision", "Deep Learning", "NLP", "Keras", "Figma"
+                "CNN", "LSTM", "Computer Vision", "Deep Learning", "NLP", "Keras", "Figma", "MySQL"
               ].concat([
                 "Python", "TensorFlow", "PyTorch", "OpenCV", "Scikit-Learn", 
                 "Pandas", "NumPy", "Flask", "Docker", "Git", "MATLAB", "Java",
-                "CNN", "LSTM", "Computer Vision", "Deep Learning", "NLP", "Keras", "Figma"
+                "CNN", "LSTM", "Computer Vision", "Deep Learning", "NLP", "Keras", "Figma", "MySQL"
               ]).map((skill, i) => (
                 <span 
                   key={i} 
@@ -251,7 +253,7 @@ export default function App() {
             >
               <div className="aspect-square rounded-[3rem] overflow-hidden border-2 border-accent/20">
                 <img 
-                  src="https://res.cloudinary.com/dlzgede1z/image/upload/v1772039582/vecteezy_myself-vector-icon-design_21098416_hbzhfd.jpg" 
+                  src="vecteezy_myself-vector-icon-design_21098416.jpg" 
                   alt="Research" 
                   className="w-full h-full object-cover opacity-80"
                   referrerPolicy="no-referrer"
@@ -417,7 +419,8 @@ export default function App() {
                 {[
                   "NPTEL - Design Thinking - A Primer",
                   "NPTEL - Design Technology and Innovation",
-                  "NPTEL - The Joy of Computing using Python"
+                  "NPTEL - The Joy of Computing using Python",
+                  "Infosys Springboard - Data Structure using Python"
                 ].map((cert, i) => (
                   <motion.div 
                     key={i}
@@ -455,10 +458,24 @@ export default function App() {
                 <div className="p-8">
                   <p className="text-accent text-sm font-bold uppercase tracking-widest mb-2">{project.category}</p>
                   <h3 className="text-2xl font-bold mb-6">{project.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="px-4 py-1.5 bg-white/5 rounded-full text-xs text-white/60">{tag}</span>
-                    ))}
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="px-4 py-1.5 bg-white/5 rounded-full text-xs text-white/60">{tag}</span>
+                      ))}
+                    </div>
+                    {project.videoUrl && (
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedProject({...project, showVideo: true});
+                        }}
+                        className="flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent rounded-full text-xs font-bold hover:bg-accent hover:text-white transition-all"
+                      >
+                        <Play size={14} fill="currentColor" />
+                        Demo
+                      </button>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -494,6 +511,25 @@ export default function App() {
                   <p className="text-accent text-sm font-bold uppercase tracking-widest mb-4">{selectedProject.category}</p>
                   <h3 className="text-3xl md:text-4xl font-bold mb-8">{selectedProject.title}</h3>
                   
+                  {selectedProject.showVideo && selectedProject.videoUrl && (
+                    <div className="mb-10">
+                      <div className="aspect-video rounded-3xl overflow-hidden bg-black border border-white/10 mb-4">
+                        <iframe 
+                          src={selectedProject.videoUrl}
+                          className="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                      <button 
+                        onClick={() => setSelectedProject({...selectedProject, showVideo: false})}
+                        className="text-white/40 text-xs font-bold uppercase tracking-widest hover:text-accent transition-colors"
+                      >
+                        ← Back to Details
+                      </button>
+                    </div>
+                  )}
+
                   <div className="space-y-8">
                     <div>
                       <h4 className="text-white/40 text-xs font-bold uppercase tracking-widest mb-3">Objective</h4>
@@ -510,12 +546,23 @@ export default function App() {
                       <p className="text-white/80 leading-relaxed">{selectedProject.methods}</p>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 pt-4">
-                      {selectedProject.tags.map((tag: string) => (
-                        <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-xs font-medium text-white/60 border border-white/5">
-                          {tag}
-                        </span>
-                      ))}
+                    <div className="flex flex-wrap gap-2 pt-4 items-center justify-between">
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.tags.map((tag: string) => (
+                          <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-xs font-medium text-white/60 border border-white/5">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      {selectedProject.videoUrl && !selectedProject.showVideo && (
+                        <button 
+                          onClick={() => setSelectedProject({...selectedProject, showVideo: true})}
+                          className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-full text-sm font-bold hover:bg-accent/80 transition-all shadow-lg shadow-accent/20"
+                        >
+                          <Play size={16} fill="currentColor" />
+                          Watch Demo
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
